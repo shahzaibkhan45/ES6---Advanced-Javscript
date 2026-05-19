@@ -1,4 +1,4 @@
-
+/*
 //local and global scope
 if (true) {
     let a = 10;// let is also a local scope only run in function and block loop ke andar chalega but bahir nahi chalega for loop me bhi chalta hai
@@ -45,4 +45,41 @@ function all(name, age , city){
     return ` My friend name is ${name} and his age is ${age} and he lives in ${city}`;
 }
 let message =`this is new message ${all("raffy", 49 , "lahore")}`;
-console.log(message);
+console.log(message);*/
+
+//arrow function
+//simple function
+function add(a, b) {
+    return a + b;
+}
+console.log(add(5, 10));
+//in variable Simple function
+let add1 = function (a, b) {
+    return a + b;
+}
+console.log(add1(5, 10));
+
+//arrow function
+//without parameter
+let add2 = () =>{
+return "hello world";
+}
+console.log(add2());
+
+
+//with parameter
+let add3 = (a, b) => {
+    return a + b;
+}
+console.log(add3(115, 10));
+
+//with one parameter
+let add4 = a => `Value is ${a}`;
+console.log(add4(100));
+
+//single line code with template literals
+let add5 = (name , age) =>`my name is ${name} and age is ${age}`;
+console.log(add5("raffay", 30));
+
+
+
