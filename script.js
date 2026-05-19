@@ -1,4 +1,4 @@
-/*
+
 //local and global scope
 if (true) {
     let a = 10;// let is also a local scope only run in function and block loop ke andar chalega but bahir nahi chalega for loop me bhi chalta hai
@@ -28,7 +28,7 @@ console.log(b);
 const c = 60;// in const we cannot redeclare and reassign the value
 console.log(c);
 //>>>>>>> var/let/const
-*/
+
 
 
 //template literals
