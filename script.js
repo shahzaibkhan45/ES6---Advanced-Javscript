@@ -1,4 +1,4 @@
-
+/*
 //local and global scope
 if (true) {
     let a = 10;// let is also a local scope only run in function and block loop ke andar chalega but bahir nahi chalega for loop me bhi chalta hai
@@ -28,3 +28,21 @@ console.log(b);
 const c = 60;// in const we cannot redeclare and reassign the value
 console.log(c);
 //>>>>>>> var/let/const
+*/
+
+
+//template literals
+let name = "raffay";
+let age = 30;
+let city = "karachi";
+
+let fullmessage =` My friend name is ${name} and his age is ${age} and he lives in ${city}`;
+console.log(fullmessage);
+
+//template literals in functions 
+function all(name, age , city){
+
+    return ` My friend name is ${name} and his age is ${age} and he lives in ${city}`;
+}
+let message =`this is new message ${all("raffy", 49 , "lahore")}`;
+console.log(message);
