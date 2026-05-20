@@ -106,7 +106,7 @@ function sum(){
 }
 sum(10, 20, 30, 40, 50);
 
-//with rest operators
+//with rest operators ye function me jitne bhi value as a argument do woh kam karengi
 let rest = (name , ...nums) =>{
 let sum = 10;
 for(let i in nums){
@@ -125,3 +125,37 @@ let rest1 = (name , ...nums) =>{
 
 }
 rest1("raffay", 10, 20, 30, 40, 50);
+
+//spread operator ye array,object ke andar jitne bhi value hai unko as a argument me de deta hai
+
+let arr1 = [10, 20, 30];
+let arr2 = [40, 50, 60];
+let arr3 = [...arr1,56, ...arr2,90];// ye dono array ke value ko as a argument me de deta hai
+console.log(arr3);
+
+let obj1 = {
+    name : "raffay",
+    age : 30
+}
+let obj2 = {
+    city : "karachi",
+    country : "pakistan"
+}
+let obj3 = {...obj1, ...obj2};// ye dono object ke value ko as a argument me de deta hai
+console.log(obj3);
+
+let arr4 = [10, 20, 30];
+
+arr6 = [...arr4];// ye arr4 ke value ko as a argument me de deta hai arr6 me
+arr4.push(100);
+
+console.log(arr4);
+console.log(arr6);
+
+function sum(a , ...nums){
+      console.log(a);
+    console.log(nums);
+    
+}
+let y = [378,89476,8768979,89475897];
+sum(10, 20, 30, 40, 50, ...y);
