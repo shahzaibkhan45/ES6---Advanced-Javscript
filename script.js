@@ -202,8 +202,8 @@ console.log(objC.getName());
 let name_obj4 = "raffay";
 let city_obj4 = "karachi";
 let objD = {
-    name: name_obj4,
-    city: city_obj4,
+   name_obj4,
+   city_obj4,
     getName (){
         return `my name is ${this.name} and i live in ${this.city}`;
     }
@@ -248,24 +248,76 @@ let [a1, a2, a3, a4, a5] = arr;
 console.log(a1, a2, a4, a5);
 
 //example 2
-let arr1 = [10,20,40];
-let [a6,, a7] = arr1;
+let arr8 = [10,20,40];
+let [a6,, a7] = arr8;
 console.log(a6, a7);
 
 //example 3
-let arr2 = [10, 20, 30, 40, 50];
-let [a8, a9, ...restArr] = arr2;
+let arr5 = [10, 20, 30, 40, 50];
+let [a8, a9, ...restArr] = arr5;
 console.log(a8, a9);
 console.log(restArr);
 
 //example 4
-let arr3 = [10, 20, 30, 40, 50];
-let [a10 , ...restArr1] = arr3;
+let arr9 = [10, 20, 30, 40, 50];
+let [a10 , ...restArr1] = arr9;
 console.log(a10);
 console.log(restArr1);
 
 //example 5
-let arr4 = [10];
-let [a11, a12 = 20] = arr4;
+let arr7 = [10];
+let [a11, a12 = 20] = arr7;
 console.log(a11);
 console.log(a12);
+
+
+//object destructuring
+//example 1
+let obj5 = {
+    name : "raffay",
+    age1 : 30,
+    city : "karachi"
+}
+let {name, age1, city} = obj5;
+console.log(name, age1, city);
+
+//example 2
+//rename variable
+let obj6 = {
+    name : "raffay",
+    age2 : 30, 
+}
+let {name : name1, age2 : age3} = obj6;
+console.log(name1, age3);
+
+//example 3
+let obj7 = {
+    name : "raffay",
+    age4 : 30,
+    city : "karachi"
+}
+let {name : name2, ...restObj} = obj7;
+console.log(name2);
+console.log(restObj);
+
+//example 4
+let obj8 = {
+    name : "raffay",
+    age5 : 30,
+    city : "karachi"
+}
+let {name : name3, age5 = 20} = obj8;
+console.log(name3);
+console.log(age5);
+
+//example 5
+let obj9 = {
+    name : "raffay",
+    age6 : 30,
+}
+let obj10 = {
+    ...obj9,
+    city : "karachi"
+}
+console.log(obj10);
+
