@@ -198,3 +198,6 @@ function object(fname ,lname ,course){
     return {name , course}
 }
 console.log(object(fname ,lname , course));
+
+
+
