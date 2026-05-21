@@ -234,6 +234,7 @@ function object(fname ,lname ,course){
 }
 console.log(object(fname ,lname , course));
 // >>>>>>> object-literals
+// <<<<<<< HEAD
 
 
 //array destructuring
@@ -269,3 +270,53 @@ let arr4 = [10];
 let [a11, a12 = 20] = arr4;
 console.log(a11);
 console.log(a12);
+// =======
+
+
+//OOP in js
+class person{
+constructor(name , age){
+    this.name = name;
+    this.age = age;
+}
+call(){
+console.log(`my name is ${this.name} and my age is ${this.age}`);
+}
+breeak(){
+console.log(`my name is ${this.name} and my age is ${this.age} and i am a student`);
+}
+static hello(){
+    console.log("hello world");
+}
+}
+class student extends person{
+    constructor(name , age , course){
+        super(name , age);
+        this.course = course;
+    }
+    get name(){
+        return this._name;
+    }
+    set name(value){
+        if(value.length < 3){    
+            console.log("name must be at least 3 characters long");
+    }else{
+        this._name = name;
+    }
+}
+    breeak(){
+        console.log(`my name is ${this.name} and my age is ${this.age} and i am a student and i am studying ${this.course}`);
+    }
+    
+}
+let p = new person("raffay", 30);
+let p1 = new student("khan", 40, "javascript");
+p1.name = "ra";// name must be at least 3 characters long
+p1.name = "raffay";// name must be at least 3 characters long
+student.hello();
+p.call();
+p.breeak();
+p1.call();
+p1.breeak();
+
+// >>>>>>> oop
