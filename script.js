@@ -32,11 +32,11 @@ console.log(c);
 
 
 //template literals
-let name = "raffay";
+let name_tmpl = "raffay";
 let age = 30;
-let city = "karachi";
+let city_tmpl = "karachi";
 
-let fullmessage =` My friend name is ${name} and his age is ${age} and he lives in ${city}`;
+let fullmessage =` My friend name is ${name_tmpl} and his age is ${age} and he lives in ${city_tmpl}`;
 console.log(fullmessage);
 
 //template literals in functions 
@@ -126,6 +126,7 @@ let rest1 = (name , ...nums) =>{
 }
 rest1("raffay", 10, 20, 30, 40, 50);
 
+// <<<<<<< HEAD
 //spread operator ye array,object ke andar jitne bhi value hai unko as a argument me de deta hai
 
 let arr1 = [10, 20, 30];
@@ -159,3 +160,77 @@ function sum(a , ...nums){
 }
 let y = [378,89476,8768979,89475897];
 sum(10, 20, 30, 40, 50, ...y);
+// =======
+// object literal
+
+// example 1
+let name_obj1 = "raffay";
+let city_obj1 = "karachi";
+let objA = {
+    name: name_obj1,
+    age : 30,
+    city: city_obj1
+}
+console.log(objA);
+
+// example 2
+let name_obj2 = "raffay";
+let city_obj2 = "karachi";
+let objB = {
+    [name_obj2 + "name"]: "raffay",
+    age : 30,
+    city: city_obj2
+}
+console.log(objB);
+
+
+// example 3
+// old Method
+
+let name_obj3 = "raffay";
+let city_obj3 = "karachi";
+let objC = {
+    name : name_obj3,    
+    city : city_obj3,
+    getName : function(){
+        return `my name is ${this.name} and i live in ${this.city}`;
+    }
+}
+console.log(objC.getName());
+
+// new method
+let name_obj4 = "raffay";
+let city_obj4 = "karachi";
+let objD = {
+    name: name_obj4,
+    city: city_obj4,
+    getName (){
+        return `my name is ${this.name} and i live in ${this.city}`;
+    }
+}
+console.log(objD.getName());
+
+// new method with bracket notation
+let name_obj5 = "raffay";
+let city_obj5 = "karachi";
+let objE = {
+    name: name_obj5,
+    city: city_obj5,
+    'getName 1'(){
+        return `my name is ${this.name} and i live in ${this.city}`;
+    }
+}
+console.log(objE['getName 1']());// we can also access the function with this method but we cannot access the variable with this method because it will return undefined because it is not a function it is a variable 
+
+
+// function return object
+
+let fname = "raffay";
+let lname = "khan";
+let course = "javascript";
+function object(fname ,lname ,course){
+    let name = fname + " " + lname;
+    return {name , course}
+}
+console.log(object(fname ,lname , course));
+// >>>>>>> object-literals
