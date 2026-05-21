@@ -234,3 +234,38 @@ function object(fname ,lname ,course){
 }
 console.log(object(fname ,lname , course));
 // >>>>>>> object-literals
+
+
+//array destructuring
+// example 0
+let arr0 = [10, 20, 30, 40, 50];
+let a0 = arr0[0];
+let a01 = arr0[1];
+console.log(a0, a01);
+//example 1
+let arr = [10, 20, 30, 40, 50];
+let [a1, a2, a3, a4, a5] = arr;
+console.log(a1, a2, a4, a5);
+
+//example 2
+let arr1 = [10,20,40];
+let [a6,, a7] = arr1;
+console.log(a6, a7);
+
+//example 3
+let arr2 = [10, 20, 30, 40, 50];
+let [a8, a9, ...restArr] = arr2;
+console.log(a8, a9);
+console.log(restArr);
+
+//example 4
+let arr3 = [10, 20, 30, 40, 50];
+let [a10 , ...restArr1] = arr3;
+console.log(a10);
+console.log(restArr1);
+
+//example 5
+let arr4 = [10];
+let [a11, a12 = 20] = arr4;
+console.log(a11);
+console.log(a12);
