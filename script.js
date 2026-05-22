@@ -344,15 +344,33 @@ console.log(obj10);
 
 //practical example of AJAX
 
+// function fetdata(){
+//     let xhr = new XMLHttpRequest();
+//     xhr.onreadystatechange = function(){
+//         if(xhr.readyState === 4 && xhr.status === 200){
+//             document.getElementById("demo").innerHTML = xhr.responseText;
+//         }else if(xhr.readyState === 4 && xhr.status === 404){
+//             console.log("data not found");
+//         }
+//     }
+//     xhr.open("GET","./data.txt" ,true);
+//     xhr.send();
+// }
+
+
+//API
+//API(Application Programming Interface) ye ek set of rules hai jisse hum apne application ko dusre application ke sath interact karne ke liye use karte hain. Isme hum API endpoints ke through data fetch karte hain aur us data ko apne application me use karte hain.
 function fetdata(){
-    let xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState === 4 && xhr.status === 200){
-            document.getElementById("demo").innerHTML = xhr.responseText;
-        }else if(xhr.readyState === 4 && xhr.status === 404){
-            console.log("data not found");
-        }
-    }
-    xhr.open("GET","./data.txt" ,true);
-    xhr.send();
+let p = fetch("https://jsonplaceholder.typicode.com/posts");
+p.then((response) => {
+    return response.json();
+}).then((data) => {
+//    document.getElementById("demo").innerHTML = data[0].title;onlyfirst title show karega
+data.forEach((element)=>{
+document.getElementById("demo").innerHTML += element
+.title + "<br>";
+});
+}).catch((error) => {
+    console.log(error);
+});
 }
