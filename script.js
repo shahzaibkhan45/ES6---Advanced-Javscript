@@ -321,3 +321,38 @@ let obj10 = {
 }
 console.log(obj10);
 
+//AJAX(Asynchronous Javascript And XML) ye ek technique hai jisse hum apne web page ko dynamically update kar sakte hain bina page ko reload kiye. Isme hum server se data fetch karte hain aur us data ko apne web page par display karte hain.
+
+//XMLHttpRequest ye ek built-in object hai jisse hum AJAX request bhej sakte hain. Isme hum open() method se request ko initialize karte hain, send() method se request ko bhejte hain aur onreadystatechange event ke through response ko handle karte hain.
+
+//in response   
+//readyState 0: request not initialized
+//readyState 1: server connection established
+//readyState 2: request received
+//readyState 3: processing request
+//readyState 4: request finished and response is ready
+
+// 3 response status code
+// 200: OK
+// 404: Not Found
+// 500: Internal Server Error
+
+//data types in AJAX
+//XML Data
+//Text data
+//JSON Data
+
+//practical example of AJAX
+
+function fetdata(){
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+            document.getElementById("demo").innerHTML = xhr.responseText;
+        }else if(xhr.readyState === 4 && xhr.status === 404){
+            console.log("data not found");
+        }
+    }
+    xhr.open("GET","./data.txt" ,true);
+    xhr.send();
+}
